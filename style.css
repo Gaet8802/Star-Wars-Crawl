@@ -1,0 +1,167 @@
+
+html, body{
+    margin:0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+justify-content: center;
+}
+
+@keyframes STAR-MOVE {
+	from {
+		left: 0;
+		top: 0;
+	}
+	to { 
+		right: -10000px;
+		top: -2000px;
+	}
+}
+    keyframes STAR-MOVE {
+	from {
+		background-position: 5% 5%;
+	}
+	to { 
+		background-position: 1300% 600%;
+	}
+}
+
+#background {
+	background: black url(./images/background.png) repeat 5% 5%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;		
+	animation-name: STAR-MOVE;
+	animation-duration: 200s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+#midground {
+	background: url(./images/midground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;	
+	animation-name: STAR-MOVE;
+	animation-duration: 150s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+#foreground {
+	background: url(./images/foreground.png) repeat 35% 35%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;	
+	animation-name: STAR-MOVE;
+	animation-duration: 100s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@font-face{
+    font-family:FirstFont;
+    src: url('font/Starjhol.ttf');
+}
+#first_text{
+    text-align: center;
+    font-size: 32px;
+    font-family:FirstFont;
+    color: #9358e0;
+    font-style:italic;
+    opacity: 0;
+    animation: a-long-time-ago 3s 1s ease-out;
+}
+
+@keyframes a-long-time-ago{
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+#logo{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    z-index: 1;
+    margin-left: 22%;
+    text-align: center;
+    font-size: 32px;
+color: #4bd5ee;
+    animation: logo 10s 5s ease-out;
+opacity: 0;
+}
+@keyframes logo {
+    0% {
+        width: 25em;        
+        transform: scale(2.75);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        width: 18em;      
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.1);
+        width: 18em;        
+    }
+}
+#text_starwars{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 1000px;
+    margin: 0 0 0 -400px;
+    top: auto;
+    bottom: 0;
+    height: 800px;
+    color: #fafa2d;    
+    font-size: 64px;
+    font-family:FirstFont;
+    text-align: justify;
+    transform-origin: center bottom;
+    transform: perspective(300px) rotateX(25deg);
+}
+#text_starwars div {
+    position: absolute;
+    top: 100%; 
+    animation-delay: 15s;
+    animation-duration: 35s;
+    animation-name: star_wars_effect;
+    animation-timing-function: linear;
+}
+
+@keyframes star_wars_effect {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1; /* progressive dissapear at the end */
+    }
+    75%{
+        opacity:1;
+    }
+    85%{
+        opacity:0.75;
+    }
+
+    95%{
+        opacity:0.50;
+    }
+
+    100% {
+        top: -5000px;
+        opacity: 0;
+    }
+}
